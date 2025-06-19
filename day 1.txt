@@ -1,0 +1,18 @@
+class Solution {
+    public int partitionArray(int[] nums, int k) {
+        int n=nums.length;
+        Arrays.sort(nums);
+       
+        int s=1;
+        int m=nums[0];
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]-m > k)
+            {
+                m=nums[i];
+                s++;
+            }
+        }
+        return s;
+    }
+}
